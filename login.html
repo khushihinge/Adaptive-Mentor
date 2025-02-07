@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Mentor Login</title>
+    <style>
+        /* General Styles */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            color: #d48344; /* Copper accent color */
+        }
+
+        /* Interactive Gradient Background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #0e1156, #1b1d6a, #2a2d7d, #0e1156);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s infinite alternate;
+            z-index: -1;
+        }
+        
+        @keyframes gradientAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        /* Login Form */
+        .login-container {
+            background-color: #0e1156;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .login-container .logo {
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            color: #ffac65; /* Copper orange */
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .input-group label {
+            color: #ffac65;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #2d1753; /* Slightly lighter dark shade */
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .login-container button {
+            background-color: #ffac65; /* Copper orange */
+            color: #0e1156;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #ffbe7d; /* Lighter copper shade */
+        }
+
+        .login-container .footer {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ffac65;
+        }
+
+        .footer a {
+            color: #ffac65;
+            text-decoration: underline;
+        }
+
+        .footer a:hover {
+            color: #ffbe7d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="logo">
+        <img src="logo.png" alt="Adaptive Mentor Logo" width="100"> <!-- Path to your logo file -->
+    </div>
+    <h2>Welcome to Adaptive Mentor</h2>
+    <form onsubmit="login(event)">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-group">
+            <label for="role">Login As</label>
+            <select id="role" name="role" required>
+                <option value="student">Student</option>
+                <option value="admin">Admin</option>
+                <option value="teacher">Teacher</option>
+            </select>
+        </div>
+        <button type="submit">LOGIN</button>
+    </form>
+    <div class="footer">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+    </div>
+</div>
+
+<script>
+    function login(event) {
+        event.preventDefault();
+        const role = document.getElementById('role').value;
+
+        // Redirect based on user role
+        if (role === 'student') {
+            window.location.href = 'student.html';
+        } else if (role === 'admin') {
+            window.location.href = 'admin.html';
+        } else if (role === 'teacher') {
+            window.location.href = 'teacher_home.html'; // Adjust this page name as needed
+        }
+    }
+</script>
+
+</body>
+</html>

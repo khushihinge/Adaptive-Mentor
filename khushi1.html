@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adaptive Mentor</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            color: #ADD8E6;
+            background-color: #0e1156;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #f6a06e;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        nav ul li a:hover {
+            background-color:#aed6f1;
+            color: black;
+        }
+        .login-btn {
+            background-color: #f6a06e;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .login-btn:hover {
+            background-color: #aed6f1;
+            color: black;
+        }
+        .background-image {
+            background-image: url('am5.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 625px;
+            color: #edbb99;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+        }
+
+
+	/* General Styling */
+
+.about-us {
+    text-align: center;
+    align: center;
+    padding: 20px;
+    width: 95%;
+    height: 150px;
+    background-color: #002a5c; /* Dark blue background */
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.about-us h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-us p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.key-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.founders {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+
+.key-features .box {
+    background: linear-gradient(to bottom, #69baf0, #ADD8E6); 
+    color: #0e1156;
+    padding: 20px;
+    width: 350px ;
+    height: 180px;
+    text-align: center;
+    border-radius: 30px;
+    margin: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.founders .box {
+    background: linear-gradient(to bottom, #0e1156, #ADD8E6);
+    color: #0e1156;
+    padding: 20px;
+    width: 200px ;
+    height: 180px;
+    text-align: center;
+    border-radius: 30px;
+    margin: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.key-features .box p, .founders .box p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.key-features .box b, .founders .box p {
+    font-size: 15px;
+}
+
+.founders .box img {
+    border: 4px solid #ffffff; /* Adds white border around the images */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.founders .box img:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.founders .box p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+  
+        .form-container {
+		align-items: flex;
+    		background-color: white;
+   		padding: 20px;
+    		border-radius: 10px;
+    		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    		text-align: center;
+        }
+	.form-khushi{
+	    display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #c7dff0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+            width: 300px;
+            margin: 100px auto;
+		}
+        .form-khushi h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-khushi button {
+            width: 150px;
+	    height: 50px;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-khushi button:hover {
+            background-color: #003f7f;
+        }  
+      
+	.login-container {
+            background-color: #0e1156;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+	    margin: 60px auto;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+	
+        .login-container .logo {
+
+	    display: flex;
+    	    justify-content: center;
+    	    align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container h2 {
+            color: #ffac65; /* Copper orange */
+            margin-bottom: 20px;
+        }
+
+        .login-container .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .login-container .input-group label {
+            color: #c7dff0;;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .login-container .input-group input, .login-container .input-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: #2d1753; /* Slightly lighter dark shade */
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+
+        .login-container button {
+            background-color: #c7dff0; 
+            color: #0e1156;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background-color: #ffbe7d; /* Lighter copper shade */
+        }
+
+	 .login-container .footer {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ffac65;
+        }
+
+        .footer a {
+            color: #ffac65;
+            text-decoration: underline;
+        }
+
+        .footer a:hover {
+            color: #ffbe7d;
+        }
+
+
+
+
+
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+        footer {
+            background-color: #0e1156;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+	    font-size: 0.75rem;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #eb984e;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #aed6f1;
+        }
+        .pricing-section {
+            padding: 20px 20px;
+            background: linear-gradient(to right, #0e1156, #ADD8E6);
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+        .pricing-header {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .pricing-plans {
+	    display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .plan {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 300px;
+        }
+	 .plan:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .plan h3 {
+            font-size: 15px;
+            color: #b5723d;
+            margin-bottom: 15px;
+        }
+        .plan p {
+            font-size: 15px;
+            margin: 10px 0;
+            color: black;
+        }
+
+        .plan p:first-of-type {
+            font-size: 15px;
+            color: #b5723d;
+            margin-bottom: 20px;
+        }
+        .read-more {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+        }
+	.read-more:hover {
+            background-color: #fc5c7d;
+        }
+        .container {
+            padding: 20px;
+        }
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+	    width: 1350px;
+	    margin: 40px auto;
+	    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);  
+        }
+
+        .contact-form h2 {
+            margin-top: 0;
+        }
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .contact-form input[type="submit"] {
+            background-color: #1C39BB; /* Persian Blue */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: #163191;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .members {
+            padding: 20px;
+        }
+        .member {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .item {
+            text-align: center;
+            margin: 10px;
+            flex: 1;
+            max-width: 30%;
+        }
+        .item img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .item p {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+        .course-card {
+            background-color: #c7dff0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .course-card:hover {
+            transform: scale(1.05);
+        }
+        .course-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .course-card h3 {
+            color: #0056b3;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .course-card p {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .mentor-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .mentor-card {
+            background-color: #bddbf0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            width: 300px;
+	    height: 80px;
+            padding: 30px;
+            text-align: center;
+        }
+	.mentor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .mentor-name {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .mentor-specialization {
+            font-size: 1.1em;
+            color: #555;
+        }
+.join-mentor-box {
+    margin: 20px auto;
+    padding: 15px;
+    width: 900px;
+    height: 320px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #bddbf0;
+    align: center;
+}
+.join-mentor-box h3 {
+    margin-top: 0;
+}
+.input-group {
+    margin-bottom: 10px;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000; /* Set label color to black */
+    font-weight: bold;
+}
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    background-color: #e6e6e6; /* Set a lighter background color for input */
+    border: 1px solid #ccc; /* Optional: border color */
+    color: #333; /* Text color for input */
+    border-radius: 5px; /* Match button border-radius */
+}
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .enroll-btn {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .enroll-btn:hover {
+            background-color: #004085;
+        }    
+
+	.register-body {
+	    font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+	 .register-container {
+	
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 500px;
+            text-align: center;
+	    margin: 60px auto;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        
+
+        /* Heading and paragraph styling */
+        .register-container h2 {
+            color: #333;
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        .register-container p {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+
+        /* Input field styling */
+        .register-container label {
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        /* Button styling */
+        .register-container input[type="submit"] {
+            background-color: #1C39BB;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Links styling */
+        .register-container a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .register-container a:hover {
+            color: #0056b3;
+        }
+
+
+
+
+
+</style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="logo4.jpg" alt="Logo"> <!-- Replace 'logo.png' with the path to your logo -->
+            <h1 style="color: #e88d59;">Adaptive Mentor</h1>
+        </div>
+        <ul>
+            <li><a href="#home" onclick="showPage('home')">Home</a></li>
+            <li><a href="#aboutus" onclick="showPage('aboutus')">About Us</a></li>
+            <li><a href="#courses" onclick="showPage('courses')">Courses</a></li>
+            <li><a href="#mentors" onclick="showPage('mentors')">Mentors</a></li>
+            <li><a href="#memberships" onclick="showPage('memberships')">Memberships</a></li>    
+	    <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+	    <li><a href="#login" onclick="showPage('login')">Login</a></li>
+	    <li><a href="#register" onclick="showPage('register')">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page">
+        <div class="background-image">
+	<h1>Guiding Your Growth, Adapting to Your Needs</h1>
+        </div>
+    <footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+    </footer>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="aboutus" class="page" style="display:none;">
+        <div class="about-us">
+            <h2>About Us</h2>
+            <p>Adaptive Mentor is an innovative educational platform designed to personalize the learning experience for each individual user.Our goal is to make learning more flexible and enjoyable by tailoring lessons to each user’s learning style, whether they learn best through seeing, hearing, or hands-on activities.We use modern technology, including sensors that track your engagement during lessons, to adjust content in real-time and help you stay on track. Our system also ensures your data is safe and protected.At Adaptive Mentor, we’re dedicated to making education smarter and more personalized for everyone, helping students learn at their own pace while supporting teachers with helpful insights​.</p>
+        </div>
+        <div class="key-features">
+		<p><b>Key Features</b></p>
+            <div class="box"><b>Personalized Learning Experience</b>
+		<p>The website is designed to adapt to the user's learning style (visual, auditory, or hands-on) by leveraging advanced tracking technologies such as motion and eye tracking. This allows the system to tailor lessons according to the student's engagement and responses </p>
+		</div>
+            <div class="box"><b>Integration of Advanced Technologies</b>
+		<p> It uses a combination of technologies like microprocessors, C/C++, HTML, and sensor data to create an interactive and responsive learning environment. The backend processes sensor data, and the frontend delivers personalized content based on this information</p>
+		</div>
+            <div class="box"><b>Data-Driven Insights and Security</b>
+		<p>The website ensures data privacy and security through encryption, secure login, and HTTPS communication, while also providing educators with valuable insights and recommendations to help them support students better​</p></div>
+        </div>
+        <div class="founders">
+		<p><b>Founders</b></p>
+            <div class="box">
+        <img src="khushi.jpg" alt="Khushi Hinge" style="width: 100px; height: 120px; border-radius: 50%;">
+        <p>Khushi Hinge</p>
+    </div>
+    
+    <div class="box">
+        <img src="ridhi.jpg" alt="Ridhi Sharma" style="width: 100px; height: 120px; border-radius: 50%;">
+        <p>Ridhi Sharma</p>
+    </div>
+    
+    <div class="box">
+        <img src="riya.jpg" alt="Riya Jamgaonkar" style="width: 100px; height: 120px; border-radius: 50%;">
+        <p>Riya Jamgaonkar</p>
+    </div>
+    
+    <div class="box">
+        <img src="meghal.jpg" alt="Meghal Mehta" style="width: 100px; height: 120px; border-radius: 50%;">
+        <p>Meghal Mehta</p>
+    </div>        
+</div>
+<footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+</footer>
+</div>
+
+    <!-- Courses Page -->
+    <div id="courses" class="page" style="display:none;">
+	<div class="members">
+        <h2>Courses</h2>
+        <div class="course-container">
+            <!-- Web Development Course -->
+            <div class="course-card">
+                <h3>Web Development</h3>
+                <p>Learn how to build websites and web applications using the latest technologies such as HTML, CSS, JavaScript, and more. </p>
+                    <p>This course covers front-end and back-end development to give you a full-stack foundation. Perfect for beginners and intermediate developers.</p>
+                <p class="price">₹7999</p>
+		<a href="#" class="enroll-btn" onclick="showRegisterPage()">Enroll Now</a>
+            </div>
+
+           <!-- Data Science Course -->
+            <div class="course-card">
+                <h3>Data Science</h3>
+                <p>Master data analysis, visualization, and machine learning techniques. Get hands-on experience with Python, R, and industry-standard tools.</p>
+                    <p>Master tools like NumPy, Pandas, and TensorFlow to become a data expert. Ideal for aspiring data scientists.</p>
+                <p class="price">₹5999</p>
+                <a href="#" class="enroll-btn" onclick="showRegisterPage()">Enroll Now</a>
+            </div>
+
+            <!-- Design Course -->
+            <div class="course-card">
+                <h3>Design Fundamentals</h3>
+                <p>Explore the principles of graphic design and web design. Learn to use tools like Figma, Adobe XD, and Sketch to create stunning visuals.</p>
+                <p>Unleash your creativity with our design course, covering UI/UX design principles.</p>
+		<p class="price">₹9999</p>
+                <a href="#" class="enroll-btn" onclick="showRegisterPage()">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+</footer>
+</div>
+
+    <!-- Mentors Page -->
+     <div id="mentors" class="page" style="display: none;">
+	<div class="members">
+	<h2>Our Mentors</h2>
+	<div class="mentor-list">
+        <div class="mentor-card">
+            
+            <div class="mentor-name">Dr. Vishal Deshpande</div>
+            <div class="mentor-specialization">Web Development Expert</div>
+	</div>
+
+        <div class="mentor-card">
+            
+            <div class="mentor-name">Dr. Yogesh Patil</div>
+            <div class="mentor-specialization">Data Science Specialist</div>
+        </div>
+
+        <div class="mentor-card">
+            
+            <div class="mentor-name">Chirag Mehta</div>
+            <div class="mentor-specialization">Design Fundamentals Expert</div>
+        </div>
+
+ 	<div class="mentor-card">
+            
+            <div class="mentor-name">Dr. Manisha Shelar</div>
+            <div class="mentor-specialization">Web Development Expert</div>
+	</div>
+
+        <div class="mentor-card">
+            
+            <div class="mentor-name">Dr. Sheetal Hemani</div>
+            <div class="mentor-specialization">Data Science Specialist</div>
+        </div>
+
+        <div class="mentor-card">
+            
+            <div class="mentor-name">Seema Shelke</div>
+            <div class="mentor-specialization">Design Fundamentals Expert</div>
+        </div>
+	</div>
+
+	<div class="join-mentor-box">
+            <h3>Interested in Joining as a Mentor?</h3>
+            <p>If you are an expert in your field and would like to join us as a mentor, please fill out the form below.</p>
+            <form id="mentor-join-form">
+                <div class="input-group">
+                    <label for="mentor-name">Full Name</label>
+                    <input type="text" id="mentor-name" name="mentor-name" required>
+                </div>
+                <div class="input-group">
+                    <label for="mentor-specialization">Specialization</label>
+                    <input type="text" id="mentor-specialization" name="mentor-specialization" required>
+                </div>
+                <div class="input-group">
+                    <label for="mentor-email">Email</label>
+                    <input type="email" id="mentor-email" name="mentor-email" required>
+                </div>
+                <button type="submit">Join Us</button>
+            </form>
+        </div>
+    </div>
+<footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+</footer>
+
+</div>
+
+    <!-- Memberships Page -->
+    <div id="memberships" class="page" style="display: middle;">
+    <div class="members">
+        <h2>Memberships</h2>
+        <p><big><strong>Membership plan includes-</strong></big></p>
+    </div>
+    <div class="member">
+        <div class="features">
+            <img src="certificate.jpg" alt="certification" style="width: 50px; height: 50px;">
+            <p>Valid Certification and LOR</p>
+        </div>
+        <div class="features">
+            <img src="access.jpg" alt="access" style="width: 50px; height: 50px;">
+            <p>Unlimited Access</p>
+        </div>
+        <div class="features">
+            <img src="video.jpg" alt="courses" style="width: 50px; height: 50px;">
+            <p>4500+ Video Courses</p>
+        </div>
+        <div class="features">
+            <img src="learning.jpg" alt="learning" style="width: 50px; height: 50px;">
+            <p>On the Go Learning</p>
+        </div>
+        <div class="features">
+            <img src="teaching.jpg" alt="teaching" style="width: 50px; height: 50px;">
+            <p>Expert Teaching</p>
+        </div>
+        <div class="features">
+            <img src="support.jpg" alt="support" style="width: 50px; height: 50px;">
+            <p>24x7 Support</p>
+        </div>
+	 <div class="pricing-section">
+        <h2 class="pricing-header"><center>Pricing for Courses</center></h2>
+        <div class="pricing-plans">
+            <div class="plan">
+                <h3>Starter Monthly Plan</h3>
+                <p>₹2999</p>
+                <p>Unlimited course access</p>
+                <p>20 video courses</p>
+                <p>Online exam</p>
+                <p>No certification</p>
+                <p>Free teacher consultation</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <div class="plan">
+                <h3>Unlimited Monthly Plan</h3>
+                <p>₹5999</p>
+                <p>Unlimited course access</p>
+                <p>250 video courses</p>
+                <p>Online exam</p>
+                <p>Certification</p>
+                <p>Free teacher consultation & 1-1 sessions</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+<div class="plan">
+                <h3>Premium Monthly Plan</h3>
+                <p>₹10999</p>
+                <p>Unlimited course access</p>
+                <p>Full video courses</p>
+                <p>Online exam</p>
+                <p>Certification</p>
+                <p>Free teacher consultation & 1-1 sessions</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+    </footer>
+
+</div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page" style="display:none;">
+        
+ <div class="container">
+        <h2>Contact Us</h2>
+
+        <div class="contact-form">
+            <h2>Have a Question?</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="comment">Your Comments</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>Email: info@adaptive-mentor.com</p>
+            <p>Phone: 9850447589</p>
+            <p>Location:Pune, Maharashtra, India </p>
+        </div>
+    </div>
+<footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+    </footer>
+
+    </div>
+
+	<!-- Login Page -->
+	<div id="login" class="page" style="display:middle;">
+	<div class="login-container">
+    <div class="logo">
+        <img src="logo4.jpg" alt="Adaptive Mentor Logo" width="100"> <!-- Path to your logo file -->
+    </div>
+    <h2>Welcome to Adaptive Mentor</h2>
+    <form onsubmit="login(event)">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="input-group">
+            <label for="role">Login As</label>
+            <select id="role" name="role" required>
+                <option value="student">Student</option>
+                <option value="admin">Admin</option>
+                <option value="teacher">Teacher</option>
+            </select>
+        </div>
+        <button type="submit">LOGIN</button>
+    </form>
+    <div class="footer">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+    </div>
+</div>
+
+<script>
+    function login(event) {
+        event.preventDefault();
+        const role = document.getElementById('role').value;
+
+        // Redirect based on user role
+        if (role === 'student') {
+            window.location.href = 'student.html';
+        } else if (role === 'admin') {
+            window.location.href = 'admin.html';
+        } else if (role === 'teacher') {
+            window.location.href = 'teacher.html'; // Adjust this page name as needed
+        }
+    }
+</script>
+
+
+	<footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+    </footer>
+</div>
+
+    <!-- Register Page -->
+     <div id="register" class="page" style="display:middle;">
+        <div class="register-container">
+            <h2>Register Now !!</h2>
+            <p>Get instant access to over 100 courses.</p>
+            <form action="#" method="post">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
+
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="program">Start Learning Program:</label>
+                <select id="program" name="program">
+                    <option value="webdev">Web Development</option>
+                    <option value="datasci">Data Science</option>
+                    <option value="design">Design</option>
+                </select>
+
+                <label for="learner">Type of Learner:</label>
+                <select id="learner" name="learner">
+                    <option value="vislea">Visual Learner</option>
+                    <option value="audilea">Auditory Learner</option>
+                    <option value="kinelea">Kinesthetic Learner</option>
+                </select>
+
+                <input type="submit" value="Submit">
+            </form>
+            <p>Already a member? <a href="#login" onclick="showLoginPage()">Login</a></p>
+        </div>
+
+    <footer>
+        <p>&copy; 2024 Adaptive Mentor. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        function showPage(page) 
+	{
+            var pages = document.getElementsByClassName('page');
+            for (var i = 0; i < pages.length; i++) 
+	    {
+                pages[i].style.display = 'none';
+            }
+            document.getElementById(page).style.display = 'block';
+        }
+	
+	function showRegisterPage() {
+   	 // Hide the courses page
+    	document.getElementById('courses').style.display = 'none';
+    	// Show the login page
+    	document.getElementById('register').style.display = 'block';
+	}
+	
+
+	function showLoginPage() {
+    	// Hide the courses page
+    	document.getElementById('register').style.display = 'none';
+    	// Show the login page
+    	document.getElementById('login').style.display = 'block';
+	}
+    </script>
+</body>
+</html>

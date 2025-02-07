@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adaptive Mentor Student Portal</title>
+    <style>
+         body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            color: #ADD8E6;
+            background-color: #0e1156;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #f6a06e;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        nav ul li a:hover {
+            background-color: #aed6f1;
+            color: black;
+        }
+
+        .container {
+            padding: 2rem;
+            display: none;
+            position: relative;
+            z-index: 1;
+            flex: 1; /* Allow the container to grow and fill available space */
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1, h2 {
+            color: #0e1156;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            margin: 1rem 0;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .btn {
+            background-color: #0e1156;
+            color: #f5b892;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f5b892;
+            color: #0e1156;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #0e1156;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Changed to relative */
+            width: 100%;
+            font-size: 0.75rem;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #eb984e;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #aed6f1;
+        }
+
+        /* Home Page Background Image */
+        .home.active {
+            background-image: url('am5.jpg'); /* Change this to your image URL */
+            background-size: cover;
+            background-position: center;
+            color: #edbb99;
+            height: calc(100vh - 130px); /* Adjust for nav height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column; /* Center content vertically */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="logo4.jpg" alt="Logo">
+            <h1 style="color: #e88d59;">Adaptive Mentor</h1>
+        </div>
+        <ul>
+            <li><a href="#" onclick="showTab('home')">Home</a></li>
+            <li><a href="#" onclick="showTab('courses')">My Courses</a></li>
+            <li><a href="#" onclick="showTab('progress')">Progress</a></li>
+            <li><a href="#" onclick="showTab('resources')">Resources</a></li>
+            <li><a href="#" onclick="showTab('logout')">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div id="home" class="container active home">
+        <h1 style="color: #edbb99;">Welcome Student</h1>
+        <h3 style="color: #edbb99;">Explore your courses and track your learning journey on Adaptive Mentor.</h3>
+    </div>
+
+    <!-- My Courses Section -->
+    <div id="courses" class="container">
+        <h1>My Courses</h1>
+        <div class="card">
+            <h2>Web Development Basics</h2>
+            <p>Progress: 60%</p>
+            <button class="btn">Continue Learning</button>
+        </div>
+        <div class="card">
+            <h2>Introduction to Data Science</h2>
+            <p>Progress: 45%</p>
+            <button class="btn">Continue Learning</button>
+        </div>
+    </div>
+
+    <!-- Progress Section -->
+    <div id="progress" class="container">
+        <h1>My Progress</h1>
+        <div class="card">
+            <h2>Overall Course Completion</h2>
+            <p>You have completed 55% of your courses.</p>
+            <button class="btn">View Detailed Report</button>
+        </div>
+    </div>
+
+    <!-- Resources Section -->
+    <div id="resources" class="container">
+        <h1>Learning Resources</h1>
+        <div class="card">
+            <h2>Web Development Guide</h2>
+            <p>Additional materials and project files to enhance your learning.</p>
+            <button class="btn">Download</button>
+        </div>
+        <div class="card">
+            <h2>Data Science Handbook</h2>
+            <p>Practice datasets and exercises to master your skills.</p>
+            <button class="btn">Download</button>
+        </div>
+    </div>
+
+    <!-- Logout Section -->
+    <div id="logout" class="container">
+        <h1>Logout</h1>
+        <p>You have been logged out successfully. <a href="#">Login Again</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Adaptive Mentor. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        function showTab(tab) {
+    const tabs = document.querySelectorAll('.container');
+    tabs.forEach(t => {
+        t.classList.remove('active');
+        if (t.id !== 'home') {
+            t.style.backgroundImage = 'none'; // Remove background from other sections
+        }
+    });
+    document.getElementById(tab).classList.add('active');
+}
+    </script>
+</body>
+</html>

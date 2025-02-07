@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adaptive Mentor Admin Portal</title>
+    <style>
+         body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        nav {
+            color: #ADD8E6;
+            background-color: #0e1156;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 40px;
+            width: 40px;
+            margin-right: 10px;
+        }
+        .logo h1 {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #f6a06e;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        nav ul li a:hover {
+            background-color:#aed6f1;
+            color: black;
+        }
+
+        .container {
+            padding: 2rem;
+            display: none;
+            position: relative;
+            z-index: 1;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Home Section Background Image */
+        #home.active {
+            background-image: url('am5.jpg'); /* Replace with the path to your image */
+            background-size: cover;
+            background-position: center;
+            color: #edbb99;
+            height: calc(100vh - 130px); /* Adjust for nav height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column; /* Center content vertically */
+        }
+
+        h1, h2 {
+            color: #0e1156;
+        }
+
+        h1.welcome {
+            font-size: 2.5rem;
+            color: #0e1156;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            margin: 1rem 0;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        .card-header {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #0e1156;
+        }
+
+        .btn {
+            background-color: #0e1156;
+            color: #f5b892;
+            padding: 1rem 1rem;
+            border: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+	    margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #f5b892;
+            color: #0e1156;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        table th, table td {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #0e1156;
+            color: #f5b892;
+        }
+
+
+	.overview {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .overview-item {
+            background-color: #0e1156;
+            color: #f5b892;
+            padding: 1rem;
+            border-radius: 8px;
+            flex: 1;
+            text-align: center;
+        }
+
+
+        /* Footer Styling */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+        
+	footer {
+    	   background-color: #0e1156;
+           color: white;
+    	   text-align: center;
+    	   padding: 20px;
+    	   width: 100%;
+    	   font-size: 0.75rem;
+    	   margin-top: auto; /* Ensure footer stays at the bottom */
+	}
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #eb984e;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #aed6f1;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+ <nav>
+        <div class="logo">
+            <img src="logo4.jpg" alt="Logo"> <!-- Replace 'logo.png' with the path to your logo -->
+            <h1 style="color: #e88d59;">Adaptive Mentor</h1>
+        </div>
+        <ul>
+            <li><a href="#" onclick="showTab('home')">Home</a></li>
+            <li><a href="#" onclick="showTab('dashboard')">Dashboard</a></li>
+            <li><a href="#" onclick="showTab('students')">Students</a></li>
+            <li><a href="#" onclick="showTab('courses')">Courses</a></li>
+            <li><a href="#" onclick="showTab('mentors')">Mentors</a></li>    
+            <li><a href="#" onclick="showTab('logout')">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Updated Homepage -->
+    <div id="home" class="container active">
+        <h1 class="welcome" style="color: #edbb99;">Welcome Admin</h1>
+        <h3 style="color: #edbb99;">Manage your platform efficiently and enhance the learning experience for students.</h3>
+    </div>
+
+    
+
+    <!-- Dashboard Section -->
+    <div id="dashboard" class="container">
+        <h1>Admin Dashboard</h1>
+        <div class="card">
+            <div class="card-header">Website Overview</div>
+            <div class="overview">
+                <div class="overview-item">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">120</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Active Courses</h3>
+                    <p>10</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Registered Mentors</h3>
+                    <p>5</p>
+                </div>
+                <div class="overview-item">
+                    <h3>Attendance Rate</h3>
+                    <p id="attendanceRate">85%</p>
+                </div>
+            </div>
+	<button class="btn" onclick="saveDashboardDetails()">Save Details</button>
+        </div>
+        <div class="card">
+            <h2>Recent Activity</h2>
+            <p><strong>Last Login:</strong> 2024-11-10</p>
+            <p><strong>Pending Student Approvals:</strong> 3</p>
+            <p><strong>New Enrollments:</strong> 5 in the past week</p>
+        </div>
+        <div class="card">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#" onclick="showTab('students')">Manage Students</a></li>
+                <li><a href="#" onclick="showTab('courses')">Manage Courses</a></li>
+                <li><a href="#" onclick="showTab('mentors')">Manage Mentors</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Students Section -->
+    <div id="students" class="container">
+        <h1>Manage Students</h1>
+        <div class="card">
+            <h2>Student Details</h2>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">Rajesh Naik</td>
+                        <td contenteditable="true">Web Development</td>
+                        <td contenteditable="true">Active</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+		    <tr>
+                        <td contenteditable="true">Sheetal Rajput</td>
+                        <td contenteditable="true">Data Science</td>
+                        <td contenteditable="true">Active</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+		    <tr>
+                        <td contenteditable="true">Ram Sehgal</td>
+                        <td contenteditable="true">Design Fundamentals</td>
+                        <td contenteditable="true">Active</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <div id="courses" class="container">
+        <h1>Manage Courses</h1>
+        <div class="card">
+            <h2>Course Overview</h2>
+            <table id="courseTable">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Enrolled Students</th>
+                        <th>Mentors Assigned</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">Web Development</td>
+                        <td contenteditable="true">22</td>
+                        <td contenteditable="true">2</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+		    <tr>
+                        <td contenteditable="true">Data Science</td>
+                        <td contenteditable="true">18</td>
+                        <td contenteditable="true">2</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+		    <tr>
+                        <td contenteditable="true">Design Fundamentals</td>
+                        <td contenteditable="true">26</td>
+                        <td contenteditable="true">2</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            <button class="btn" onclick="addCourseRow()">Add Course</button>
+        </div>
+    </div>
+
+    <!-- Mentors Section -->
+    <div id="mentors" class="container">
+        <h1>Manage Mentors</h1>
+        <div class="card">
+            <h2>Mentor Overview</h2>
+            <table id="mentorTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subject</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="true">Vishal Deshpande</td>
+                        <td contenteditable="true">Web Development Expert</td>
+                        <td contenteditable="true">4.7</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+		    <tr>
+                        <td contenteditable="true">Yogesh Patil</td>
+                        <td contenteditable="true">Data Science Expert</td>
+                        <td contenteditable="true">4.2</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+                    <tr>
+                        <td contenteditable="true">Seema Shelke</td>
+                        <td contenteditable="true">Design Fundamentals Expert</td>
+                        <td contenteditable="true">4.9</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+		    <tr>
+                        <td contenteditable="true">Manisha Shelar</td>
+                        <td contenteditable="true">Web Development Expert</td>
+                        <td contenteditable="true">4.6</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+		    <tr>
+                        <td contenteditable="true">Sheetal Hemani</td>
+                        <td contenteditable="true">Data Science Expert</td>
+                        <td contenteditable="true">4.9</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+		    
+		    <tr>
+                        <td contenteditable="true">Chirag Mehta</td>
+                        <td contenteditable="true">Design Fundamentals Expert</td>
+                        <td contenteditable="true">4.1</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button class="btn" onclick="addMentorRow()">Add Mentor</button>
+        </div>
+    </div>
+
+    <!-- Logout Section -->
+    <div id="logout" class="container">
+        <h1>Logout</h1>
+        <p>You have been logged out successfully. <a href="#">Login Again</a></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Adaptive Mentor. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</div>
+    <script>
+        function showTab(tab) {
+            const tabs = document.querySelectorAll('.container');
+            tabs.forEach(t => t.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+        }
+
+	function removeRow(button) {
+            const row = button.parentElement.parentElement;
+            row.parentElement.removeChild(row);
+        }
+
+
+        function addCourseRow() {
+            const table = document.getElementById('courseTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td contenteditable="true">New Course</td>
+                <td contenteditable="true">0</td>
+                <td contenteditable="true">0</td>
+                <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+            `;
+        }
+
+        function addMentorRow() {
+            const table = document.getElementById('mentorTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td contenteditable="true">New Mentor</td>
+                <td contenteditable="true">New Expertise</td>
+                <td contenteditable="true">5.0</td>
+                <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+            `;
+        }
+
+
+        function saveDashboardDetails() {
+            const totalStudents = document.getElementById('totalStudents').innerText;
+            const attendanceRate = document.getElementById('attendanceRate').innerText;
+            alert(`Saved:\nTotal Students: ${totalStudents}\nAttendance Rate: ${attendanceRate}`);
+        }
+
+    </script>
+</body>
+</html>
