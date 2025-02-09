@@ -3,7 +3,9 @@
 <head>
     <title>Adaptive Mentor</title>
     <style>
-	    
+	    html {
+            scroll-behavior: smooth;
+        }
         body, html {
             height: 100%;
             margin: 0;
@@ -15,6 +17,7 @@
             min-height: 100vh;
         }
         nav {
+            width: 100%;
             color: #ADD8E6;
             background-color: #0e1156;
             padding: 15px;
@@ -22,6 +25,7 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             display: flex;
             align-items: center;
@@ -682,14 +686,15 @@ button[type="submit"]:hover {
             <h1 style="color: #e88d59;">Adaptive Mentor</h1>
         </div>
         <ul>
-            <li><a href="#home" onclick="showPage('home')">Home</a></li>
-            <li><a href="#aboutus" onclick="showPage('aboutus')">About Us</a></li>
-            <li><a href="#courses" onclick="showPage('courses')">Courses</a></li>
-            <li><a href="#mentors" onclick="showPage('mentors')">Mentors</a></li>
-            <li><a href="#memberships" onclick="showPage('memberships')">Memberships</a></li>    
-	    <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
-	    <li><a href="#login" onclick="showPage('login')">Login</a></li>
-	    <li><a href="#register" onclick="showPage('register')">Register</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('home')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('aboutus')">About Us</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('courses')">Courses</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('mentors')">Mentors</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('memberships')">Memberships</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('login')">Login</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('register')">Register</a></li>
+
         </ul>
     </nav>
 
@@ -1066,6 +1071,14 @@ button[type="submit"]:hover {
     </footer>
 
     <script>
+
+function showPage(pageId) {
+  // Add your existing page-switching logic here
+
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
+}
+
         function showPage(page) 
 	{
             var pages = document.getElementsByClassName('page');
@@ -1091,9 +1104,21 @@ button[type="submit"]:hover {
     	document.getElementById('login').style.display = 'block';
 	}
 
-    window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
+    window.onload = function () 
+    {
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+    });
     };
+
+    window.addEventListener("load", function () {
+  // Force scroll to top after rendering
+  setTimeout(function () {
+    window.scrollTo(0, 0);
+  }, 0);
+});
+
 
     </script>
 </body>
