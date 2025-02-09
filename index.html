@@ -3,6 +3,13 @@
 <head>
     <title>Adaptive Mentor</title>
     <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
 	    html {
             scroll-behavior: smooth;
         }
@@ -112,10 +119,12 @@
 }
 
 .key-features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Ensures even spacing between boxes */
+  align-items: flex-start; /* Aligns boxes to the top for consistency */
+  margin: 40px 20px;
+  gap: 30px; /* Increased spacing between boxes for better separation */
 }
 
 .founders {
@@ -131,12 +140,29 @@
     color: #0e1156;
     padding: 20px;
     width: 350px ;
-    height: 180px;
+    height: 200px;
     text-align: center;
-    border-radius: 30px;
+    border-radius: 20px;
     margin: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.key-features .box:hover {
+  transform: scale(1.05); /* Slight zoom-in effect */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+}
+
+.key-features h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px; 
+}
+
+.key-features p {
+  font-size: 16px;
+  line-height: 1.5; 
+  margin-top: 10px;
 }
 
 .founders .box {
@@ -144,10 +170,10 @@
     color: #0e1156;
     padding: 20px;
     width: 200px ;
-    height: 180px;
+    height: 200px;
     text-align: center;
     border-radius: 30px;
-    margin: 10px;
+    margin: 25px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -228,9 +254,9 @@
             background-color: #0e1156;
             padding: 30px;
             border-radius: 10px;
-            width: 350px;
+            width: 450px;
             text-align: center;
-	    margin: 60px auto;
+	        margin: 60px auto;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
         }
         
@@ -452,6 +478,23 @@
             justify-content: space-around;
             padding: 20px;
         }
+
+        .memberships-heading {
+            margin-bottom: 20px; /* Adjust value as needed */
+        }
+        
+        .features {
+            display: flex;
+            flex-direction: column; /* Aligns items vertically */
+            align-items: center;    /* Centers content horizontally */
+            text-align: center;     /* Centers text below the image */
+            padding: 10px;          /* Adds some space around each feature */
+        }
+
+        .features p {
+            margin-top: 10px;       /* Adds space between the image and text */
+        }
+
         .item {
             text-align: center;
             margin: 10px;
@@ -496,22 +539,33 @@
             font-size: 16px;
             margin-bottom: 20px;
         }
+
+        .mentor-h2 {
+        margin-bottom: 30px !important; 
+      }
         .mentor-list {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
         }
         .mentor-card {
             background-color: #bddbf0;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	    transition: transform 0.3s, box-shadow 0.3s;
+	        transition: transform 0.3s, box-shadow 0.3s;
             overflow: hidden;
-            width: 300px;
-	    height: 80px;
+            width: 400px;
+	        height: 200px;
             padding: 30px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
         }
 	.mentor-card:hover {
             transform: translateY(-10px);
@@ -539,6 +593,11 @@
 .join-mentor-box h3 {
     margin-top: 0;
 }
+
+.mentor-card:last-of-type {
+  margin-bottom: 30px; /* Space between the last row of mentor cards and the form */
+}
+
 .input-group {
     margin-bottom: 10px;
 }
@@ -672,8 +731,9 @@ button[type="submit"]:hover {
             color: #0056b3;
         }
 
-
-
+        h1 { 
+            font-size: 2.5rem; 
+        }
 
 
 </style>
@@ -713,18 +773,18 @@ button[type="submit"]:hover {
     <div id="aboutus" class="page" style="display:none;">
         <div class="about-us">
             <h2>About Us</h2>
-            <p>Adaptive Mentor is an innovative educational platform designed to personalize the learning experience for each individual user.Our goal is to make learning more flexible and enjoyable by tailoring lessons to each user’s learning style, whether they learn best through seeing, hearing, or hands-on activities.We use modern technology, including sensors that track your engagement during lessons, to adjust content in real-time and help you stay on track. Our system also ensures your data is safe and protected.At Adaptive Mentor, we’re dedicated to making education smarter and more personalized for everyone, helping students learn at their own pace while supporting teachers with helpful insights​.</p>
+            <p>Adaptive Mentor is an innovative educational platform designed to personalize the learning experience for each individual user. Our goal is to make learning more flexible and enjoyable by tailoring lessons to each user’s learning style, whether they learn best through seeing, hearing, or hands-on activities. Our system also ensures your data is safe and protected. </p>
         </div>
         <div class="key-features">
 		<p><b>Key Features</b></p>
             <div class="box"><b>Personalized Learning Experience</b>
-		<p>The website is designed to adapt to the user's learning style (visual, auditory, or hands-on) by leveraging advanced tracking technologies such as motion and eye tracking. This allows the system to tailor lessons according to the student's engagement and responses </p>
+		<p>The website is designed to adapt to the user's learning style, like visual, auditory, or hands-on. This allows the system to intelligently tailor lessons according to the student's unique learning style and pace.</p>
 		</div>
             <div class="box"><b>Integration of Advanced Technologies</b>
-		<p> It uses a combination of technologies like microprocessors, C/C++, HTML, and sensor data to create an interactive and responsive learning environment. The backend processes sensor data, and the frontend delivers personalized content based on this information</p>
+		<p> The website is built using Python, Django, HTML, and CSS.These technologies enable intelligent content recommendations, real-time feedback, and seamless user interactions.</p>
 		</div>
             <div class="box"><b>Data-Driven Insights and Security</b>
-		<p>The website ensures data privacy and security through encryption, secure login, and HTTPS communication, while also providing educators with valuable insights and recommendations to help them support students better​</p></div>
+		<p>The platform tracks user progress and learning patterns to offer personalized recommendations. Security measures like encryption, secure logins, and HTTPS ensure data privacy and protection.​</p></div>
         </div>
         <div class="founders">
 		<p><b>Founders</b></p>
@@ -800,7 +860,8 @@ button[type="submit"]:hover {
     <!-- Mentors Page -->
      <div id="mentors" class="page" style="display: none;">
 	<div class="members">
-	<h2>Our Mentors</h2>
+	<h2 class="mentor-h2">Our Mentors</h2>
+    
 	<div class="mentor-list">
         <div class="mentor-card">
             
@@ -869,8 +930,8 @@ button[type="submit"]:hover {
     <!-- Memberships Page -->
     <div id="memberships" class="page" style="display: middle;">
     <div class="members">
-        <h2>Memberships</h2>
-        <p><big><strong>Membership plan includes-</strong></big></p>
+        <h2 class="memberships-heading">Memberships</h2>
+        <h3 class="memberships-heading">Membership plan includes-</h3>
     </div>
     <div class="member">
         <div class="features">
@@ -1119,6 +1180,20 @@ function showPage(pageId) {
   }, 0);
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Show only the homepage when the site is loaded
+    showPage('home'); // Show the homepage
+
+    // Optionally, hide unnecessary pages directly if they exist
+    const hiddenPages = ['register', 'login', 'memberships'];
+    hiddenPages.forEach(pageId => {
+        const page = document.getElementById(pageId);
+        if (page) {
+            page.style.display = 'none';
+        }
+    });
+});
 
     </script>
 </body>
