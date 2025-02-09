@@ -1090,6 +1090,11 @@ button[type="submit"]:hover {
     	// Show the login page
     	document.getElementById('login').style.display = 'block';
 	}
+
+    window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+    };
+
     </script>
 </body>
 </html>
