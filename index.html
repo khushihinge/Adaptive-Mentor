@@ -406,19 +406,19 @@
 
         .plan p:first-of-type {
             font-size: 15px;
-            color: #b5723d;
+            color: #be6e35;
             margin-bottom: 20px;
         }
         .read-more {
             margin-top: 20px;
             display: inline-block;
             padding: 10px 20px;
-            background-color: blue;
+            background-color: rgb(4, 4, 99);
             color: white;
             text-decoration: none;
         }
 	.read-more:hover {
-            background-color: #fc5c7d;
+            background-color: #4773e3;
         }
         .container {
             padding: 20px;
@@ -635,7 +635,7 @@ button[type="submit"]:hover {
             color: #28a745;
         }
         .enroll-btn {
-            background-color: #0056b3;
+            background-color: #014288;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -735,7 +735,7 @@ button[type="submit"]:hover {
             font-size: 2.5rem; 
         }
 
-
+        
 </style>
 </head>
 <body>
@@ -749,7 +749,7 @@ button[type="submit"]:hover {
             <li><a href="javascript:void(0);" onclick="showPage('home')">Home</a></li>
             <li><a href="javascript:void(0);" onclick="showPage('aboutus')">About Us</a></li>
             <li><a href="javascript:void(0);" onclick="showPage('courses')">Courses</a></li>
-            <li><a href="javascript:void(0);" onclick="showPage('mentors')">Mentors</a></li>
+            <li><a href="javascript:void(0);" onclick="showPage('mentors')">Counsellors</a></li>
             <li><a href="javascript:void(0);" onclick="showPage('memberships')">Memberships</a></li>
             <li><a href="javascript:void(0);" onclick="showPage('contact')">Contact</a></li>
             <li><a href="javascript:void(0);" onclick="showPage('login')">Login</a></li>
@@ -857,10 +857,10 @@ button[type="submit"]:hover {
 </footer>
 </div>
 
-    <!-- Mentors Page -->
+    <!-- Counsellors page -->
      <div id="mentors" class="page" style="display: none;">
 	<div class="members">
-	<h2 class="mentor-h2">Our Mentors</h2>
+	<h2 class="mentor-h2">Our Counsellors </h2>
     
 	<div class="mentor-list">
         <div class="mentor-card">
@@ -901,8 +901,8 @@ button[type="submit"]:hover {
 	</div>
 
 	<div class="join-mentor-box">
-            <h3>Interested in Joining as a Mentor?</h3>
-            <p>If you are an expert in your field and would like to join us as a mentor, please fill out the form below.</p>
+            <h3>Interested in Joining as a Counsellor?</h3>
+            <p>If you are an expert in your field and would like to join us as a counsellor, please fill out the form below.</p>
             <form id="mentor-join-form">
                 <div class="input-group">
                     <label for="mentor-name">Full Name</label>
@@ -969,7 +969,8 @@ button[type="submit"]:hover {
                 <p>Online exam</p>
                 <p>No certification</p>
                 <p>Free teacher consultation</p>
-                <a href="#" class="read-more">Read More</a>
+                <a href="javascript:void(0);" class="enroll-btn" onclick="showPage('register')">Register</a>
+
             </div>
 
             <div class="plan">
@@ -980,7 +981,7 @@ button[type="submit"]:hover {
                 <p>Online exam</p>
                 <p>Certification</p>
                 <p>Free teacher consultation & 1-1 sessions</p>
-                <a href="#" class="read-more">Read More</a>
+                <a href="javascript:void(0);" class="enroll-btn" onclick="showPage('register')">Register</a>
             </div>
 <div class="plan">
                 <h3>Premium Monthly Plan</h3>
@@ -990,7 +991,10 @@ button[type="submit"]:hover {
                 <p>Online exam</p>
                 <p>Certification</p>
                 <p>Free teacher consultation & 1-1 sessions</p>
-                <a href="#" class="read-more">Read More</a>
+                <a href="javascript:void(0);" class="enroll-btn" onclick="showPage('register')">Register</a>
+
+
+
             </div>
         </div>
     </div>
@@ -1192,6 +1196,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (page) {
             page.style.display = 'none';
         }
+    });
+});
+
+
+document.querySelectorAll('.read-more').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
     });
 });
 

@@ -204,7 +204,7 @@
             <li><a href="#" onclick="showTab('dashboard')">Dashboard</a></li>
             <li><a href="#" onclick="showTab('students')">Students</a></li>
             <li><a href="#" onclick="showTab('courses')">Courses</a></li>
-            <li><a href="#" onclick="showTab('mentors')">Mentors</a></li>    
+            <li><a href="#" onclick="showTab('counsellors')">Counsellors</a></li>    
             <li><a href="#" onclick="showTab('logout')">Logout</a></li>
         </ul>
     </nav>
@@ -232,7 +232,7 @@
                     <p>10</p>
                 </div>
                 <div class="overview-item">
-                    <h3>Registered Mentors</h3>
+                    <h3>Registered Counsellors</h3>
                     <p>5</p>
                 </div>
                 <div class="overview-item">
@@ -253,7 +253,7 @@
             <ul>
                 <li><a href="#" onclick="showTab('students')">Manage Students</a></li>
                 <li><a href="#" onclick="showTab('courses')">Manage Courses</a></li>
-                <li><a href="#" onclick="showTab('mentors')">Manage Mentors</a></li>
+                <li><a href="#" onclick="showTab('counsellors')">Manage Counsellors</a></li>
             </ul>
         </div>
     </div>
@@ -275,25 +275,32 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td contenteditable="true">Rajesh Naik</td>
+                        <td contenteditable="true">Raj Mehta</td>
                         <td contenteditable="true">Web Development</td>
                         <td contenteditable="true">Active</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 
 		    <tr>
-                        <td contenteditable="true">Sheetal Rajput</td>
-                        <td contenteditable="true">Data Science</td>
+                        <td contenteditable="true">Sakshi Deshpande </td>
+                        <td contenteditable="true">Web Development</td>
                         <td contenteditable="true">Active</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 
 		    <tr>
-                        <td contenteditable="true">Ram Sehgal</td>
+                        <td contenteditable="true">Rahul Sharma</td>
+                        <td contenteditable="true">Data Science</td>
+                        <td contenteditable="true">Active</td>
+                        <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
+                    </tr>
+<tr>
+                        <td contenteditable="true">Parth Malhotra</td>
                         <td contenteditable="true">Design Fundamentals</td>
                         <td contenteditable="true">Active</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
+
 
                 </tbody>
             </table>
@@ -310,7 +317,7 @@
                     <tr>
                         <th>Course Name</th>
                         <th>Enrolled Students</th>
-                        <th>Mentors Assigned</th>
+                        <th>Counsellors Assigned</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -343,16 +350,15 @@
         </div>
     </div>
 
-    <!-- Mentors Section -->
-    <div id="mentors" class="container">
-        <h1>Manage Mentors</h1>
+    <!-- Counsellors Section -->
+    <div id="counsellors" class="container">
+        <h1>Manage Counsellors</h1>
         <div class="card">
-            <h2>Mentor Overview</h2>
-            <table id="mentorTable">
+            <h2>Counsellor Overview</h2>
+            <table id="counsellorTable">
                 <thead>
                     <tr>
                         <th>Name</th>
-                        <th>Subject</th>
                         <th>Rating</th>
                         <th>Actions</th>
                     </tr>
@@ -360,56 +366,50 @@
                 <tbody>
                     <tr>
                         <td contenteditable="true">Vishal Deshpande</td>
-                        <td contenteditable="true">Web Development Expert</td>
                         <td contenteditable="true">4.7</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 
 		    <tr>
                         <td contenteditable="true">Yogesh Patil</td>
-                        <td contenteditable="true">Data Science Expert</td>
                         <td contenteditable="true">4.2</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 
                     <tr>
                         <td contenteditable="true">Seema Shelke</td>
-                        <td contenteditable="true">Design Fundamentals Expert</td>
                         <td contenteditable="true">4.9</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 
 		    <tr>
                         <td contenteditable="true">Manisha Shelar</td>
-                        <td contenteditable="true">Web Development Expert</td>
                         <td contenteditable="true">4.6</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 
 		    <tr>
                         <td contenteditable="true">Sheetal Hemani</td>
-                        <td contenteditable="true">Data Science Expert</td>
                         <td contenteditable="true">4.9</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 		    
 		    <tr>
                         <td contenteditable="true">Chirag Mehta</td>
-                        <td contenteditable="true">Design Fundamentals Expert</td>
                         <td contenteditable="true">4.1</td>
                         <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
                     </tr>
 
                 </tbody>
             </table>
-            <button class="btn" onclick="addMentorRow()">Add Mentor</button>
+            <button class="btn" onclick="addCounsellorRow()">Add Counsellor</button>
         </div>
     </div>
 
     <!-- Logout Section -->
     <div id="logout" class="container">
         <h1>Logout</h1>
-        <p>You have been logged out successfully. <a href="#">Login Again</a></p>
+        <p>You have been logged out successfully. <a href="login.html">Login Again</a></p>
     </div>
 
     <footer>
@@ -441,12 +441,11 @@
             `;
         }
 
-        function addMentorRow() {
-            const table = document.getElementById('mentorTable').getElementsByTagName('tbody')[0];
+        function addCounsellorRow() {
+            const table = document.getElementById('counsellorTable').getElementsByTagName('tbody')[0];
             const newRow = table.insertRow();
             newRow.innerHTML = `
-                <td contenteditable="true">New Mentor</td>
-                <td contenteditable="true">New Expertise</td>
+                <td contenteditable="true">New Counsellor</td>
                 <td contenteditable="true">5.0</td>
                 <td><button class="btn" onclick="removeRow(this)">Remove</button></td>
             `;
